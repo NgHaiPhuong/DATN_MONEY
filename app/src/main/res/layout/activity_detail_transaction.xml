@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/tv_back"
+        android:layout_width="@dimen/_32sdp"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_36sdp"
+        android:padding="@dimen/_5sdp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_edit"
+        style="@style/StyleTextViewSemiBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:padding="@dimen/_5sdp"
+        android:src="@drawable/ic_back"
+        android:text="@string/str_edit"
+        android:textColor="@color/main_color"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:fontFamily="@font/inter_bold"
+        android:text="@string/str_transaction"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_18ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_date"
+        style="@style/StyleTextViewSemiBold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_48sdp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/color_001C41"
+        android:textSize="@dimen/_18ssp"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        tools:text="February, 07 2025" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_amount"
+        style="@style/StyleTextViewSemiBold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/color_text_red"
+        android:textSize="@dimen/_20ssp"
+        app:layout_constraintTop_toBottomOf="@id/tv_date"
+        tools:text="-$544" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_title_category"
+        style="@style/StyleTextViewSemiBold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:text="@string/str_category"
+        android:textColor="@color/color_001C41"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintTop_toBottomOf="@id/tv_amount" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imv_category"
+        android:layout_width="@dimen/_42sdp"
+        android:layout_height="@dimen/_42sdp"
+        android:layout_margin="@dimen/_20sdp"
+        android:background="@drawable/bg_category_selected"
+        android:padding="@dimen/_5sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_category"
+        tools:src="@drawable/ic_food" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_name_category"
+        style="@style/StyleTextViewSemiBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:textColor="@color/color_001C41"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintBottom_toBottomOf="@id/imv_category"
+        app:layout_constraintStart_toEndOf="@id/imv_category"
+        app:layout_constraintTop_toTopOf="@id/imv_category"
+        tools:text="Food" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_title_note"
+        style="@style/StyleTextViewSemiBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:text="@string/str_note"
+        android:textColor="@color/color_001C41"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imv_category" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_des_note"
+        style="@style/StyleTextViewRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:text="@string/str_note"
+        android:textColor="@color/color_001C41"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_note"
+        tools:text="Mc’ Donald" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_delete"
+        style="@style/StyleTextViewSemiBold"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_24sdp"
+        android:background="@drawable/bg_delete"
+        android:gravity="center"
+        android:text="@string/delete_transaction"
+        android:textColor="@color/color_text_red"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

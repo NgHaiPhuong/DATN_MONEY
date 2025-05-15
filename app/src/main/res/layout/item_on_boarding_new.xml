@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ctl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_28sdp"
+            android:fontFamily="@font/notosans_bold"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="@string/title_onboarding_1"
+            android:textColor="@color/main_color"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:fontFamily="@font/notosans_regular"
+            android:gravity="center"
+            android:maxLines="3"
+            android:text="@string/des_onboarding_1"
+            android:textColor="@color/color_2B9AFF"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_on_boarding_1"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@id/tvAction"
+            app:layout_constraintTop_toBottomOf="@id/tvDes" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivDot"
+            android:layout_width="@dimen/_55sdp"
+            android:layout_height="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:src="@drawable/ic_dot_onboarding_1"
+            app:layout_constraintBottom_toTopOf="@id/rl_native"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tvAction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosans_regular"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/next"
+            android:textColor="@color/color_0588FA"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/ivDot"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivDot"
+            app:layout_constraintTop_toTopOf="@id/ivDot" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/vAnim"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@id/rl_native"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/animation_hand" />
+
+        <RelativeLayout
+            android:id="@+id/rl_native"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <FrameLayout
+                android:id="@+id/native_ads"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <include layout="@layout/native_bot_media_top_loading" />
+            </FrameLayout>
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/frAdsNative"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <FrameLayout
+            android:id="@+id/frAds"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/shimmerContainerNative"
+                layout="@layout/native_full_screen_loading" />
+        </FrameLayout>
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

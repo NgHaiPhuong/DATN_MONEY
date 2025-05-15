@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/_16sdp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imv_category"
+        android:layout_width="@dimen/_42sdp"
+        android:layout_height="@dimen/_42sdp"
+        android:layout_marginVertical="@dimen/_8sdp"
+        android:background="@drawable/bg_category_selected"
+        android:padding="@dimen/_8sdp"
+        android:src="@drawable/ic_food"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_name_category"
+        style="@style/StyleTextViewSemiBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:textColor="@color/color_001C41"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintStart_toEndOf="@id/imv_category"
+        app:layout_constraintTop_toTopOf="@id/imv_category"
+        tools:text="Food" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_note"
+        style="@style/StyleTextViewRegular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/color_111111"
+        app:layout_constraintBottom_toBottomOf="@id/imv_category"
+        app:layout_constraintEnd_toStartOf="@id/tv_time"
+        app:layout_constraintStart_toEndOf="@id/imv_category"
+        app:layout_constraintTop_toBottomOf="@id/tv_name_category"
+        tools:text="Mc’ Donald" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_amount"
+        style="@style/StyleTextViewSemiBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_text_red"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_name_category"
+        tools:text="-$544" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_time"
+        style="@style/StyleTextViewRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_111111"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_note"
+        tools:text="10:57" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

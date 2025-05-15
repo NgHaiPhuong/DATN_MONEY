@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BatteryProgressView">
+        <attr name="lightColor" format="color" />
+        <attr name="darkColor" format="color" />
+        <attr name="textColor" format="color" />
+        <attr name="progress" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="JarView">
+        <attr name="jarColor" format="color" />
+        <attr name="cornerRadius" format="dimension" />
+        <attr name="shadowRadius" format="dimension" />
+    </declare-styleable>
+</resources>

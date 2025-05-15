@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activity.setbudget.SetBudgetActivity">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_title_set_budget"
+        style="@style/StyleTextViewBold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_42sdp"
+        android:gravity="center"
+        android:text="@string/str_set_your_budget"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_16ssp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imv_set"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_24sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/imv_set_budget"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_set_budget" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_des"
+        style="@style/StyleTextViewSemiBold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_16sdp"
+        android:gravity="center_horizontal"
+        android:text="@string/please_enter_your_net_worth_money_manager_will_help_you_navigate_your_money"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/imv_set" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edt_set_budget"
+        style="@style/StyleTextViewSemiBold"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_70sdp"
+        android:layout_margin="@dimen/_16sdp"
+        android:background="@drawable/bg_edit_set"
+        android:gravity="center"
+        android:hint="@string/enter_your_net_worth"
+        android:inputType="number"
+        android:textColor="@color/color_001C41"
+        android:maxLength="12"
+        android:textColorHint="@color/color_AAAAAA"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintTop_toBottomOf="@id/tv_des" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_save"
+        style="@style/StyleTextViewSemiBold"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_margin="@dimen/_16sdp"
+        android:background="@drawable/bg_budget_detail"
+        android:gravity="center"
+        android:text="@string/save"
+        android:textColor="@color/color_F4F9FF"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintTop_toBottomOf="@id/edt_set_budget" />
+</androidx.constraintlayout.widget.ConstraintLayout>

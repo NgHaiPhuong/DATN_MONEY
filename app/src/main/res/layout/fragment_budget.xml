@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.budget.BudgetFragment">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_title"
+        style="@style/StyleTextViewBold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_36sdp"
+        android:gravity="center_horizontal"
+        android:text="@string/str_budget"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_18ssp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/_16sdp"
+        android:background="@drawable/bg_budget"
+        app:layout_constraintDimensionRatio="328:130"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+    <RelativeLayout
+        android:id="@+id/rl_total_balance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_36sdp"
+        app:layout_constraintBottom_toBottomOf="@id/view"
+        app:layout_constraintTop_toTopOf="@id/view">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title_budget"
+            style="@style/StyleTextViewSemiBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="@string/str_budget"
+            android:textColor="@color/color_001C41"
+            android:textSize="@dimen/_16ssp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_budget"
+            style="@style/StyleTextViewSemiBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_title_budget"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textColor="@color/main_color"
+            android:textSize="@dimen/_16ssp"
+            tools:text="$4,965" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_edit"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_below="@id/tv_title_budget"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_toEndOf="@id/tv_budget"
+            android:src="@drawable/ic_edit" />
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_date"
+        style="@style/StyleTextViewSemiBold"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_margin="@dimen/_16sdp"
+        android:background="@drawable/bg_date"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/_14sdp"
+        android:textColor="@color/color_F4F9FF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view"
+        tools:text="February, 2025" />
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pie_chart"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_180sdp"
+        android:layout_margin="@dimen/_16sdp"
+        app:layout_constraintTop_toBottomOf="@id/tv_date" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_expenses"
+        style="@style/StyleTextViewSemiBold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_16sdp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/color_001C41"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintTop_toBottomOf="@id/pie_chart"
+        tools:text="Expense: $47" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_budget_detail"
+        style="@style/StyleTextViewSemiBold"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_margin="@dimen/_16sdp"
+        android:background="@drawable/bg_budget_detail"
+        android:gravity="center"
+        android:text="@string/str_budget_detail"
+        android:textColor="@color/color_F4F9FF"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintTop_toBottomOf="@id/tv_expenses" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

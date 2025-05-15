@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Shortcut 1:
+    Navigates the user to SplashActivity through the intent -->
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_uninstall"
+        android:shortcutId="compose0"
+        android:shortcutShortLabel="@string/label_uninstall">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.nmh.base.project.activity.SplashActivity"
+            android:targetPackage="com.nmh.base.project">
+            <extra
+                android:name="dataUninstall"
+                android:value="uninstall" />
+        </intent>
+    </shortcut>
+
+</shortcuts>

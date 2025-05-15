@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rl_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_36sdp"
+        android:background="@drawable/bg_date"
+        android:paddingHorizontal="@dimen/_12sdp"
+        android:paddingVertical="@dimen/_8sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:fontFamily="@font/inter_semi_bold"
+            android:gravity="center_vertical"
+            android:textColor="@color/color_text_view"
+            android:textSize="@dimen/_12ssp"
+            tools:text="February, 2025" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_toEndOf="@id/tvDate"
+            android:src="@drawable/ic_next_date" />
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_total_balance"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:background="@drawable/bg_total_balance"
+        android:elevation="@dimen/_5sdp"
+        app:layout_constraintDimensionRatio="328:130"
+        app:layout_constraintTop_toBottomOf="@id/rl_date">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_total_balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/inter_semi_bold"
+                android:text="@string/total_balance"
+                android:textColor="@color/color_001C41"
+                android:textSize="@dimen/_14ssp" />
+
+            <RelativeLayout
+                android:id="@+id/rl_text_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_total_balance">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/tv_star"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="@dimen/_2sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:src="@drawable/ic_star" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_total_transaction"
+                    style="@style/StyleTextViewSemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="@dimen/_2sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:textColor="@color/main_color"
+                    android:textSize="@dimen/_14ssp"
+                    android:visibility="gone"
+                    tools:text="120000" />
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_eye"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_below="@id/tv_total_balance"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:padding="@dimen/_5sdp"
+                android:layout_toEndOf="@id/rl_text_total"
+                android:src="@drawable/ic_open_eye" />
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/llOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintTop_toBottomOf="@id/cl_total_balance">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_expenses"
+            style="@style/StyleTextViewSemiBold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_categories_enable"
+            android:gravity="center_horizontal"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:paddingVertical="@dimen/_9sdp"
+            android:text="@string/str_expenses"
+            android:textColor="@color/color_F4F9FF"
+            android:textSize="@dimen/_12ssp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_income"
+            style="@style/StyleTextViewSemiBold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_categories_disenable"
+            android:gravity="center_horizontal"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:paddingVertical="@dimen/_9sdp"
+            android:text="@string/str_income"
+            android:textColor="@color/color_001C41"
+            android:textSize="@dimen/_12ssp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_loan"
+            style="@style/StyleTextViewSemiBold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_categories_disenable"
+            android:gravity="center_horizontal"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:paddingVertical="@dimen/_9sdp"
+            android:text="@string/str_loan"
+            android:textColor="@color/color_001C41"
+            android:textSize="@dimen/_12ssp" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_search"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_34sdp"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:background="@drawable/bg_edit"
+        android:drawableEnd="@drawable/ic_search"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/_18sdp"
+        android:text="@string/str_search"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintTop_toBottomOf="@id/llOption" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_show_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_12ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_search">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_loan"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintDimensionRatio="328:120"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <RelativeLayout
+                android:id="@+id/rl_total_borrow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="@dimen/_16sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:background="@drawable/bg_total"
+                android:elevation="@dimen/_5sdp"
+                app:layout_constraintEnd_toStartOf="@id/line"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_total_borrow"
+                    style="@style/StyleTextViewSemiBold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:gravity="center"
+                    android:text="$0"
+                    android:textColor="@color/color_text_red"
+                    android:textSize="@dimen/_14ssp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/StyleTextViewSemiBold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_total_borrow"
+                    android:gravity="center"
+                    android:text="@string/borrow"
+                    android:textColor="@color/color_001C41"
+                    android:textSize="@dimen/_14ssp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_total_loan"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="@dimen/_16sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:background="@drawable/bg_total"
+                android:elevation="@dimen/_5sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/line">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_total_loan"
+                    style="@style/StyleTextViewSemiBold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:gravity="center"
+                    android:text="$0"
+                    android:textColor="@color/color_text_green"
+                    android:textSize="@dimen/_14ssp"
+                    tools:text="$6.56" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/StyleTextViewSemiBold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_total_loan"
+                    android:gravity="center"
+                    android:text="@string/loan"
+                    android:textColor="@color/color_001C41"
+                    android:textSize="@dimen/_14ssp" />
+            </RelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_total"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            android:background="@drawable/bg_total"
+            android:elevation="@dimen/_5sdp"
+            app:layout_constraintDimensionRatio="328:80"
+            app:layout_constraintTop_toBottomOf="@id/cl_loan"
+            tools:ignore="UselessLeaf">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/StyleTextViewSemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:text="@string/total_expenditure"
+                android:textColor="@color/color_001C41"
+                android:textSize="@dimen/_14ssp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_total"
+                style="@style/StyleTextViewSemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:text="$0"
+                android:textColor="@color/color_text_red"
+                android:textSize="@dimen/_14ssp" />
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_transaction"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:nestedScrollingEnabled="true"
+            android:scrollbars="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rl_total" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_empty"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_search">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_empty"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:adjustViewBounds="true"
+            android:src="@drawable/imv_empty" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/StyleTextViewSemiBold"
+            android:layout_width="match_parent"
+            android:id="@+id/tv_empty"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_empty"
+            android:layout_margin="@dimen/_12sdp"
+            android:gravity="center_horizontal"
+            android:text="@string/add_your_first_expense_to_get_start"
+            android:textColor="#646368"
+            android:textSize="@dimen/_13ssp" />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="trans">#00000000</color>
+    <color name="black">#FF000000</color>
+    <color name="black_65">#A6000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="white_40">#66FFFFFF</color>
+
+    <color name="main_color">#2D69FF</color>
+    <color name="color_DFDFDF">#DFDFDF</color>
+    <color name="color_059DDF">#059DDF</color>
+    <color name="color_0AD6F2">#0AD6F2</color>
+    <color name="color_787F87">#787F87</color>
+    <color name="color_353B41">#353B41</color>
+    <color name="color_2B9AFF">#2B9AFF</color>
+    <color name="color_0588FA">#0588FA</color>
+    <color name="color_3D405F">#3D405F</color>
+    <color name="color_E4E4FC">#E4E4FC</color>
+    <color name="color_494949">#494949</color>
+    <color name="color_212121">#212121</color>
+    <color name="color_828282">#828282</color>
+    <color name="color_2D69FF">#2D69FF</color>
+
+    <color name="color_text_view">#F4F9FF</color>
+    <color name="color_BFBFBF">#BFBFBF</color>
+    <color name="color_E1EEFF">#E1EEFF</color>
+    <color name="color_6D6C71">#6D6C71</color>
+    <color name="color_001C41">#001C41</color>
+    <color name="color_60A4FF">#60A4FF</color>
+    <color name="color_B5D5FF">#B5D5FF</color>
+    <color name="color_AAAAAA">#AAAAAA</color>
+    <color name="color_9C9C9C">#9C9C9C</color>
+    <color name="color_111111">#111111</color>
+    <color name="color_DADADA">#DADADA</color>
+    <color name="color_0C4DA4">#0C4DA4</color>
+    <color name="color_646368">#646368</color>
+    <color name="color_A6BFFF">#A6BFFF</color>
+    <color name="color_F4F9FF">#F4F9FF</color>
+
+    <color name="color_text_red">#C01618</color>
+    <color name="color_text_green">#3EB152</color>
+
+    // color category
+    <color name="color_food">#FFF78D37</color>
+    <color name="color_social">#FF5EC5DE</color>
+    <color name="color_traffic">#FF83D35D</color>
+    <color name="color_shopping">#FF9B83FF</color>
+    <color name="color_grocery">#FFFF8DF4</color>
+    <color name="color_education">#FFACCE82</color>
+    <color name="color_bills">#FFF2A815</color>
+    <color name="color_rentals">#FFFFC1C6</color>
+    <color name="color_medical">#FFFFCF6C</color>
+    <color name="color_investment">#FFFF876B</color>
+    <color name="color_gift">#FF85591C</color>
+    <color name="color_other">#FF28466C</color>
+    <color name="color_salary">#FF3AAFEA</color>
+    <color name="color_invest">#FFA4C023</color>
+    <color name="color_business">#FFFE6EDF</color>
+    <color name="color_interest">#FFF5913B</color>
+    <color name="color_extra">#FF6144E4</color>
+    <color name="color_borrow">#FFC84040</color>
+    <color name="color_loan">#FF15BD15</color>
+</resources>

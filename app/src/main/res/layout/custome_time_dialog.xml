@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog">
+
+    <RelativeLayout
+        android:id="@+id/rlHeader"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_header"
+        app:layout_constraintBottom_toBottomOf="@id/tv_set_date"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_set_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:fontFamily="@font/inter_bold"
+        android:paddingBottom="@dimen/_12sdp"
+        android:text="@string/str_set_time"
+        android:textColor="@color/color_001C41"
+        android:textSize="@dimen/_15ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_24sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:padding="@dimen/_2sdp"
+        android:src="@drawable/ic_time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_set_date" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/rlHeader">
+
+        <com.github.florent37.singledateandtimepicker.SingleDateAndTimePicker
+            android:id="@+id/single_date_time_picker"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_160sdp"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            app:fontFamily="@font/inter_semi_bold"
+            app:picker_curved="true"
+            app:picker_curvedMaxAngle="45"
+            app:picker_cyclic="false"
+            app:picker_displayDays="false"
+            app:picker_displayDaysOfMonth="false"
+            app:picker_displayHours="true"
+            app:picker_displayMinutes="true"
+            app:picker_displayMonth="false"
+            app:picker_displayYears="false"
+            app:picker_itemSpacing="@dimen/_10sdp"
+            app:picker_selectedTextColor="@color/main_color"
+            app:picker_selectorColor="@color/color_F4F9FF"
+            app:picker_textColor="@color/color_646368"
+            app:picker_textSize="@dimen/_13ssp"
+            app:picker_visibleItemCount="5" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/line"
+                android:layout_width="@dimen/_1sdp"
+                android:layout_height="@dimen/_1sdp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_cancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_6sdp"
+                android:layout_marginBottom="@dimen/_12sdp"
+                android:background="@drawable/bg_cancel"
+                android:fontFamily="@font/inter_semi_bold"
+                android:gravity="center"
+                android:paddingVertical="@dimen/_12sdp"
+                android:text="@string/str_cancel"
+                android:textColor="@color/color_001C41"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/line"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_save"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_6sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginBottom="@dimen/_12sdp"
+                android:background="@drawable/bg_save"
+                android:fontFamily="@font/inter_semi_bold"
+                android:gravity="center"
+                android:paddingVertical="@dimen/_12sdp"
+                android:text="@string/str_save"
+                android:textColor="@color/color_F4F9FF"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/line" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

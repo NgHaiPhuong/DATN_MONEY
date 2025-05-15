@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //id test
+    <string name="facebook_app_id" translatable="false">360772813180119</string>
+    <string name="facebook_client_token" translatable="false">4e711af1ee30151f5026b5e613165041</string>
+    <string name="adjust_token" translatable="false">xsbc7w8b8wzk</string>
+    <string name="app_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
+
+    <string name="openapp_resume" translatable="false"></string>
+
+    <string name="inter_splash" translatable="false"></string>
+    <string name="inter_splash_uninstall" translatable="false"></string>
+    <string name="inter_theme" translatable="false"></string>
+    <string name="inter_diy_theme" translatable="false"></string>
+
+    <string name="inter_intro" translatable="false"></string>
+    <string name="inter_back" translatable="false"></string>
+    <string name="inter_home" translatable="false"></string>
+    <string name="inter_intro1" translatable="false"></string>
+    <string name="inter_intro2" translatable="false"></string>
+    <string name="inter_intro3" translatable="false"></string>
+    <string name="inter_language" translatable="false"></string>
+
+    <string name="native_full" translatable="false"></string>
+    <string name="native_full_splash" translatable="false"></string>
+    <string name="native_keep_user" translatable="false"></string>
+    <string name="native_survey_user" translatable="false"></string>
+    <string name="native_language" translatable="false"></string>
+    <string name="native_language_select" translatable="false"></string>
+    <string name="native_home" translatable="false"></string>
+    <string name="native_exit" translatable="false"></string>
+    <string name="native_back_home" translatable="false"></string>
+    <string name="native_all" translatable="false"></string>
+    <string name="native_intro1" translatable="false"></string>
+    <string name="native_intro2" translatable="false"></string>
+    <string name="native_intro3" translatable="false"></string>
+    <string name="native_intro4" translatable="false"></string>
+    <string name="native_introfull_2" translatable="false"></string>
+    <string name="native_introfull_3" translatable="false"></string>
+    <string name="native_permission" translatable="false"></string>
+    <string name="native_permission_record" translatable="false"></string>
+    <string name="native_permission_camera" translatable="false"></string>
+    <string name="native_permission_storage" translatable="false"></string>
+    <string name="native_permission_notification" translatable="false"></string>
+    <string name="native_permission_overlay" translatable="false"></string>
+    <string name="native_permission_in_app" translatable="false"></string>
+
+    <string name="banner_all" translatable="false"></string>
+    <string name="banner_splash_uninstall" translatable="false"></string>
+    <string name="banner_collapse_all" translatable="false"></string>
+</resources>

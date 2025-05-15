@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defaults>
+  <entry>
+    <key>banner_collapse</key>
+    <value>true</value>
+  </entry>
+
+  <entry>
+    <key>is_load_native_intro1</key>
+    <value>true</value>
+  </entry>
+  <entry>
+    <key>is_load_native_intro2</key>
+    <value>true</value>
+  </entry>
+  <entry>
+    <key>is_load_native_intro3</key>
+    <value>true</value>
+  </entry>
+  <entry>
+    <key>is_load_native_intro4</key>
+    <value>true</value>
+  </entry>
+  <entry>
+    <key>is_load_inter_intro</key>
+    <value>true</value>
+  </entry>
+  <entry>
+    <key>is_load_inter_intro1</key>
+    <value>true</value>
+  </entry>
+  <entry>
+    <key>is_load_inter_intro2</key>
+    <value>true</value>
+  </entry>
+  <entry>
+    <key>is_load_inter_intro3</key>
+    <value>true</value>
+  </entry>
+  <entry>
+    <key>switch_nativenew_onboarding</key>
+    <value>true</value>
+  </entry>
+  <entry>
+    <key>is_delay_show_inter_splash</key>
+    <value>true</value>
+  </entry>
+  <entry>
+    <key>is_load_native_introfull_2</key>
+    <value>true</value>
+  </entry>
+  <entry>
+    <key>is_load_native_introfull_3</key>
+    <value>true</value>
+  </entry>
+</defaults>
