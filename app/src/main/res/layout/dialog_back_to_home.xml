@@ -107,21 +107,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/tvContinue"
         app:layout_constraintTop_toBottomOf="@id/tvOutOfJuice" />
-
-    <FrameLayout
-        android:id="@+id/layout_native"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/_8sdp"
-        android:layout_marginTop="@dimen/_8sdp"
-        app:layout_constraintTop_toBottomOf="@id/tvContinue">
-
-        <FrameLayout
-            android:id="@+id/frAds"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <include layout="@layout/native_bot_horizontal_media_left_loading" />
-        </FrameLayout>
-    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

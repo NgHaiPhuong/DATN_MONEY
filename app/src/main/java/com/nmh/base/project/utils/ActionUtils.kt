@@ -10,7 +10,6 @@ import android.util.Log
 import android.view.Gravity
 import android.widget.Toast
 import androidx.core.content.FileProvider
-import com.nlbn.ads.util.AppOpenManager
 import com.nmh.base.project.R
 import java.io.File
 import java.io.FileOutputStream
@@ -46,7 +45,6 @@ object ActionUtils {
             i.data = Uri.parse(POLICY.replace("HTTPS", "https"))
             c.startActivity(i)
 
-            AppOpenManager.getInstance().disableAppResumeWithActivity(c::class.java)
         } catch (e: ActivityNotFoundException) {
             Utils.showToast(c, c.getString(R.string.no_browser), Gravity.CENTER)
         }
@@ -105,7 +103,6 @@ object ActionUtils {
             shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage)
             context.startActivity(Intent.createChooser(shareIntent, "choose one"))
 
-            AppOpenManager.getInstance().disableAppResumeWithActivity(context::class.java)
         } catch (e: java.lang.Exception) {
             e.printStackTrace()
         }
@@ -167,8 +164,6 @@ object ActionUtils {
             val i = Intent(Intent.ACTION_VIEW)
             i.data = Uri.parse(url.replace("HTTPS", "https"))
             c.startActivity(i)
-
-            AppOpenManager.getInstance().disableAppResumeWithActivity(c::class.java)
         } catch (e: ActivityNotFoundException) {
             Utils.showToast(c, c.getString(R.string.no_browser), Gravity.CENTER)
         }

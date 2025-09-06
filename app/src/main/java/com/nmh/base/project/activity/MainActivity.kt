@@ -6,7 +6,6 @@ import android.os.Looper
 import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
 import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
-import com.nlbn.ads.util.ConsentHelper
 import com.nmh.base.project.R
 import com.nmh.base.project.activity.base.BaseActivity
 import com.nmh.base.project.activity.create.CreateTransactionActivity
@@ -18,7 +17,6 @@ import com.nmh.base.project.adapter.ViewPagerAddFragmentAdapter
 import com.nmh.base.project.callback.ICallBackCheck
 import com.nmh.base.project.databinding.ActivityMainBinding
 import com.nmh.base.project.extensions.setOnUnDoubleClickListener
-import com.nmh.base.project.utils.AdsConfig
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
