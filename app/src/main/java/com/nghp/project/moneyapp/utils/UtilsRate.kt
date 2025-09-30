@@ -12,7 +12,7 @@ import com.nghp.project.moneyapp.sharepref.DataLocalManager
 import com.nghp.project.moneyapp.utils.ActionUtils.sendFeedback
 import com.google.android.play.core.review.ReviewInfo
 import com.google.android.play.core.review.ReviewManager
-import com.nghp.project.moneyapp.NMHApp
+import com.nghp.project.moneyapp.App
 import com.nghp.project.moneyapp.R
 import com.nghp.project.moneyapp.databinding.DialogRateBinding
 
@@ -27,8 +27,8 @@ object UtilsRate {
         val dialog = AlertDialog.Builder(activity, R.style.SheetDialog).create()
         dialog.setUpDialog(dialogBinding.root, false)
 
-        dialogBinding.root.layoutParams.width = (84.84f * NMHApp.w).toInt()
-        dialogBinding.root.layoutParams.height = (105.05f * NMHApp.w).toInt()
+        dialogBinding.root.layoutParams.width = (84.84f * App.w).toInt()
+        dialogBinding.root.layoutParams.height = (105.05f * App.w).toInt()
 
         var rating = 5
 

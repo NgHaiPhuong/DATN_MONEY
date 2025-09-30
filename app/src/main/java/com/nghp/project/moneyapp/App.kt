@@ -8,7 +8,7 @@ import com.nghp.project.moneyapp.sharepref.DataLocalManager
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class NMHApp : Application() {
+class App : Application() {
 
     companion object {
         @SuppressLint("StaticFieldLeak")

@@ -1,7 +1,6 @@
 package com.nghp.project.moneyapp.activity.choose
 
-import android.content.Context
-import com.nghp.project.moneyapp.NMHApp
+import com.nghp.project.moneyapp.App
 import com.nghp.project.moneyapp.db.model.CurrencyModel
 
 object DataCurrency {
@@ -9,7 +8,7 @@ object DataCurrency {
     fun getDataCurrency() : MutableList<CurrencyModel> {
         val listCurrencies = mutableListOf<CurrencyModel>()
 
-        val f = NMHApp.ctx.assets.list("flag_currency")
+        val f = App.ctx.assets.list("flag_currency")
         if (f != null) {
             for (s in f) {
                 val country = s.replace(".webp", "")
