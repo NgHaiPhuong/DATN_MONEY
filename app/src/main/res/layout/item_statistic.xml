@@ -42,7 +42,7 @@
         app:layout_constraintTop_toTopOf="@id/imv_category"
         tools:text="$230" />
 
-    <com.nmh.base.project.customView.CustomProgressStatistic
+    <com.nghp.project.moneyapp.customView.CustomProgressStatistic
         android:id="@+id/vLoading"
         android:layout_width="0dp"
         android:layout_height="@dimen/_20sdp"

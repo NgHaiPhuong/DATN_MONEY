@@ -58,8 +58,12 @@
         tools:replace="android:allowBackup"
         tools:targetApi="31">
         <activity
+            android:name=".activity.chatbot.ChatBotActivity"
+            android:windowSoftInputMode="adjustResize|stateVisible"
+            android:exported="false" />
+        <activity
             android:name=".activity.choose.ChooseCurrencyActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".activity.budgedetaileach.BudgetDetailEachActivity"
             android:exported="true" />
@@ -101,32 +105,12 @@
                 android:resource="@xml/shortcuts" />
         </activity>
         <activity
-            android:name=".activity.permission.PermissionActivity"
-            android:exported="true"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" />
-        <activity
             android:name=".activity.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".activity.uninstall.KeepUserActivity"
-            android:exported="true"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" />
-        <activity
-            android:name=".activity.uninstall.SurveyUserActivity"
-            android:exported="true"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" />
-        <activity
             android:name=".activity.SettingActivity"
-            android:exported="true"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" />
-        <activity
-            android:name=".activity.WelcomeActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
@@ -151,7 +135,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.nmh.base.project"
+            android:authorities="com.nghp.project.moneyapp"
             android:exported="false"
             android:grantUriPermissions="true"
             android:permission="android.permission.MANAGE_DOCUMENTS">
@@ -164,4 +148,5 @@
                 android:resource="@xml/provider_path" />
         </provider>
     </application>
+
 </manifest>

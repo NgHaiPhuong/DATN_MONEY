@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:paddingHorizontal="@dimen/_16sdp">
 
-    <com.nmh.base.project.customView.JarView
+    <com.nghp.project.moneyapp.customView.JarView
         android:id="@+id/javView"
         android:layout_width="@dimen/_34sdp"
         android:layout_height="@dimen/_34sdp"

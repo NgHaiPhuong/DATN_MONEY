@@ -10,8 +10,8 @@
         android:shortcutShortLabel="@string/label_uninstall">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="com.nmh.base.project.activity.SplashActivity"
-            android:targetPackage="com.nmh.base.project">
+            android:targetClass="com.nghp.project.moneyapp.activity.SplashActivity"
+            android:targetPackage="com.nghp.project.moneyapp">
             <extra
                 android:name="dataUninstall"
                 android:value="uninstall" />

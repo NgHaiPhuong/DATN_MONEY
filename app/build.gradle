@@ -10,11 +10,11 @@ plugins {
 }
 
 android {
-    namespace 'com.nmh.base.project'
+    namespace 'com.nghp.project.moneyapp'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.nmh.base.project"
+        applicationId "com.nghp.project.moneyapp"
         minSdk 23
         //noinspection EditedTargetSdkVersion
         targetSdk 34
@@ -86,6 +86,16 @@ android {
 }
 
 dependencies {
+
+    //service
+    // Import the BoM for the Firebase platform
+//    implementation(platform("com.google.firebase:firebase-bom:33.10.0"))
+
+    implementation(platform("com.google.firebase:firebase-bom:33.10.0"))
+    implementation("com.google.firebase:firebase-analytics")
+//    implementation("com.google.firebase:firebase-ai")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
+
     implementation 'androidx.core:core-ktx:1.13.1'
     implementation 'androidx.appcompat:appcompat:1.7.0'
     implementation 'com.google.android.material:material:1.12.0'
@@ -108,6 +118,7 @@ dependencies {
     //Hilt
     implementation 'com.google.dagger:hilt-android:2.51.1'
     implementation 'com.google.firebase:firebase-config-ktx:22.0.1'
+    implementation 'com.google.firebase:firebase-ai:17.3.0'
     kapt 'com.google.dagger:hilt-compiler:2.51.1'
 
     //Room
@@ -133,10 +144,6 @@ dependencies {
     // shimmer
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
 
-    //service
-    // Import the BoM for the Firebase platform
-    implementation(platform("com.google.firebase:firebase-bom:33.10.0"))
-
     // Add the dependencies for the Crashlytics and Analytics libraries
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation("com.google.firebase:firebase-crashlytics-ktx")
@@ -157,4 +164,4 @@ dependencies {
 
     implementation 'com.github.florent37:singledateandtimepicker:2.2.7'
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
-}
+    }
