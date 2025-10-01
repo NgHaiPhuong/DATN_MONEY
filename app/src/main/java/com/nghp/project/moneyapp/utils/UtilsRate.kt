@@ -43,7 +43,7 @@ object UtilsRate {
                 ivIconRate.setImageResource(R.drawable.img_rate_5)
                 tvTitleRate.text = activity.getString(R.string.des_rate_4_5)
                 tvDesRate.text = activity.getString(R.string.thanks_for_your_feedback)
-            }
+            } 
             rating = 5
         }
         dialogBinding.rate4.setOnClickListener {

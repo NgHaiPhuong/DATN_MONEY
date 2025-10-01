@@ -1,5 +1,7 @@
 package com.nghp.project.moneyapp.activity.chatbot
 
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -74,6 +76,22 @@ class ChatBotActivity : BaseActivity<ActivityChatBotBinding>(ActivityChatBotBind
                     }
                 }
             }
+        }
+
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { view, insets ->
+            val imeInsets = insets.getInsets(WindowInsetsCompat.Type.ime())
+            val navInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+
+            val bottomPadding = imeInsets.bottom.coerceAtLeast(navInsets.bottom)
+
+            binding.root.setPadding(
+                view.paddingLeft,
+                view.paddingTop,
+                view.paddingRight,
+                bottomPadding
+            )
+
+            insets
         }
     }
 
