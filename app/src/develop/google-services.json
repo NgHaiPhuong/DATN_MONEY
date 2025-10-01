@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "400852042131",
-    "project_id": "skynet-fd751",
-    "storage_bucket": "skynet-fd751.firebasestorage.app"
+    "project_number": "513125612477",
+    "project_id": "quan-ly-chi-tieu-e08bf",
+    "storage_bucket": "quan-ly-chi-tieu-e08bf.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:400852042131:android:d76dde3f7d2bdb1d9ea866",
+        "mobilesdk_app_id": "1:513125612477:android:0d9c36ec4656b44eddb0d4",
         "android_client_info": {
-          "package_name": "com.nmh.base.project"
+          "package_name": "com.nghp.project.moneyapp"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyD2EmoFyds3OCdKkeW5Bf2GJi3tAr2qB8g"
+          "current_key": "AIzaSyBev4Fd6a0LUNVBCapFqEurw1oUOPEBs0M"
         }
       ],
       "services": {

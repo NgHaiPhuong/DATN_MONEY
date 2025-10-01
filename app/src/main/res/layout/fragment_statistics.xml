@@ -8,14 +8,26 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/id_title"
         style="@style/StyleTextViewBold"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_36sdp"
         android:gravity="center"
         android:text="@string/str_statistics"
         android:textColor="@color/black"
         android:textSize="@dimen/_18ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_chatbot"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginHorizontal="@dimen/_18sdp"
+        android:layout_marginVertical="@dimen/_15sdp"
+        android:src="@drawable/chatbot"
+        app:layout_constraintBottom_toTopOf="@id/cl_total_balance"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_total_balance"

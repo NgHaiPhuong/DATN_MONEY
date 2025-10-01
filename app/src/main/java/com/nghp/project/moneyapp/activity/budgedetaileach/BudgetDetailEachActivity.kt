@@ -1,0 +1,162 @@
+package com.nghp.project.moneyapp.activity.budgedetaileach
+
+import android.annotation.SuppressLint
+import android.content.Intent
+import android.graphics.Color
+import android.os.Build
+import android.view.Gravity
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.nghp.project.moneyapp.R
+import com.nghp.project.moneyapp.activity.base.BaseActivity
+import com.nghp.project.moneyapp.activity.base.UiState
+import com.nghp.project.moneyapp.activity.detalstatistic.DetailStatisticActivity
+import com.nghp.project.moneyapp.activity.statistics.StatisticAdapter
+import com.nghp.project.moneyapp.callback.ICallBackCheck
+import com.nghp.project.moneyapp.callback.ICallBackItem
+import com.nghp.project.moneyapp.customView.CustomDeleteBudgetDialog
+import com.nghp.project.moneyapp.databinding.ActivityBudgetDetailEachBinding
+import com.nghp.project.moneyapp.db.model.BudgetModel
+import com.nghp.project.moneyapp.db.model.TransactionByCategoryModel
+import com.nghp.project.moneyapp.db.model.TransactionModel
+import com.nghp.project.moneyapp.extensions.gone
+import com.nghp.project.moneyapp.extensions.setOnUnDoubleClickListener
+import com.nghp.project.moneyapp.extensions.showToast
+import com.nghp.project.moneyapp.extensions.visible
+import com.nghp.project.moneyapp.helpers.BUDGET_DETAIL
+import com.nghp.project.moneyapp.helpers.CHART_DETAIL
+import com.nghp.project.moneyapp.helpers.SYMBOL_CURRENCY
+import com.nghp.project.moneyapp.helpers.TRANSACTION_STATISTIC_MODEL
+import com.nghp.project.moneyapp.sharepref.DataLocalManager
+import com.nghp.project.moneyapp.utils.FormatNumber
+import com.nghp.project.moneyapp.utils.UtilsBitmap
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
+import javax.inject.Inject
+
+@AndroidEntryPoint
+class BudgetDetailEachActivity : BaseActivity<ActivityBudgetDetailEachBinding>(ActivityBudgetDetailEachBinding::inflate) {
+
+    @Inject lateinit var viewModel: BudgetDetailEachViewModel
+
+    @Inject lateinit var deleteDialog: CustomDeleteBudgetDialog
+
+    @Inject
+    lateinit var statisticAdapter: StatisticAdapter
+
+    private var budgetModel : BudgetModel? = null
+
+    override fun setUp() {
+        setupLayout()
+        evenClick()
+    }
+
+    private fun setupLayout() {
+        budgetModel = if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            intent.getParcelableExtra(BUDGET_DETAIL, BudgetModel::class.java)
+        } else {
+            @Suppress("DEPRECATION")
+            intent.getParcelableExtra(BUDGET_DETAIL)
+        }
+
+        budgetModel?.let { item ->
+            updateData(item, 0L)
+
+            lifecycleScope.launch {
+                viewModel.getTransactionByBudget(item.id)
+                repeatOnLifecycle(Lifecycle.State.STARTED) {
+                    viewModel.transactionByBudget.collect {
+                        when (it) {
+                            is UiState.Loading -> {}
+                            is UiState.Error -> {}
+                            is UiState.Success -> {
+                                handleTransactionByBudget(item, it)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        deleteDialog.callback = object : ICallBackCheck {
+            override fun check(isCheck: Boolean) {
+                budgetModel?.let {
+                    viewModel.deleteBudget(it)
+                    showToast(getString(R.string.delete_succesfull), Gravity.CENTER)
+                    finish()
+                } ?: run {
+                    showToast(getString(R.string.delete_fail), Gravity.CENTER)
+                }
+            }
+        }
+
+        statisticAdapter.callback = object : ICallBackItem {
+            override fun callBack(ob: Any?, position: Int) {
+                if(ob is TransactionByCategoryModel) {
+                    startIntent(Intent(this@BudgetDetailEachActivity, DetailStatisticActivity::class.java).apply {
+                        putExtra(TRANSACTION_STATISTIC_MODEL, ob)
+                    }, false)
+                    DataLocalManager.setBoolean(CHART_DETAIL, true)
+                }
+            }
+        }
+
+        binding.rcvBudgetList.apply {
+            adapter = statisticAdapter
+            layoutManager = LinearLayoutManager(this@BudgetDetailEachActivity)
+        }
+
+        binding.pillProgressView.setDarkColor(Color.WHITE)
+        val color = UtilsBitmap.getRandomPastelColor()
+        binding.pillProgressView.setLightColor(color)
+    }
+
+    private fun evenClick() {
+        binding.ivBack.setOnUnDoubleClickListener { finish() }
+        binding.deleteButton.setOnUnDoubleClickListener {
+            if(!deleteDialog.isShowing) deleteDialog.showDialog()
+        }
+    }
+
+    private fun updateData(item: BudgetModel, total : Long = 0L) {
+        item?.let {
+            binding.tvName.text = item.name
+            binding.pillProgressView.setProgress((item.amount - total).toInt())
+            binding.pillProgressView.setFormPercentText(false)
+        }
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun handleTransactionByBudget(item: BudgetModel, state: UiState<MutableList<TransactionModel>>) {
+        when (state) {
+            is UiState.Loading -> {}
+            is UiState.Error -> {}
+            is UiState.Success -> {
+                if(state.data.isEmpty()) {
+                    binding.rlEmpty.visible()
+                    binding.rlList.gone()
+                } else {
+                    binding.rlEmpty.gone()
+                    binding.rlList.visible()
+
+                    val totalAmount = state.data.sumOf { it.amount }
+                    val currency = DataLocalManager.getOption(SYMBOL_CURRENCY).toString()
+                    binding.totalExpenditureValue.text = "$currency${FormatNumber.convertNumberToNumberDotString(totalAmount)}"
+
+                    val listStatisticByName =
+                        state.data.groupBy { it.category }
+                            .map { (category, item) ->
+                                val total = item.sumOf { it.amount }
+                                TransactionByCategoryModel(category, total)
+                            }
+                            .toMutableList()
+
+                    updateData(item, totalAmount)
+                    statisticAdapter.setData(listStatisticByName, item.amount)
+                }
+            }
+        }
+    }
+}

@@ -56,7 +56,7 @@
             android:layout_height="@dimen/_16sdp"
             android:layout_marginBottom="@dimen/_8sdp"
             android:src="@drawable/ic_dot_onboarding_1"
-            app:layout_constraintBottom_toTopOf="@id/rl_native"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -82,43 +82,8 @@
             android:layout_height="0dp"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="@id/rl_native"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
             app:lottie_rawRes="@raw/animation_hand" />
-
-        <RelativeLayout
-            android:id="@+id/rl_native"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="parent">
-
-            <FrameLayout
-                android:id="@+id/native_ads"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <include layout="@layout/native_bot_media_top_loading" />
-            </FrameLayout>
-        </RelativeLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <FrameLayout
-        android:id="@+id/frAdsNative"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <FrameLayout
-            android:id="@+id/frAds"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <include
-                android:id="@+id/shimmerContainerNative"
-                layout="@layout/native_full_screen_loading" />
-        </FrameLayout>
-    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,45 @@
+package com.nghp.project.moneyapp.helpers
+
+const val TAG = "nghp"
+const val FIRST_INSTALL = "FIRST_INSTALL"
+
+const val URL_ASSETS = "file:///android_asset/"
+
+const val MIN_SCALE = 0.75f
+
+const val CURRENT_LANGUAGE = "CURRENT_LANGUAGE"
+const val FINISH_LANGUAGE = "FINISH_LANGUAGE"
+const val IS_SHOW_BACK = "IS_SHOW_BACK"
+
+const val IS_RATED = "IS_RATED"
+
+const val IS_UNINSTALL = "uninstall"
+
+const val IS_SHOW_CD_NATIVE_FULL_SPLASH = "IS_SHOW_CD_NATIVE_FULL_SPLASH"
+const val IS_SHOW_CD_NATIVE_FULL = "IS_SHOW_CD_NATIVE_FULL"
+
+const val TRANSACTION_DETAIL = "TRANSACTION_DETAIL"
+
+const val EDIT_TRANSACTION = "EDIT_TRANSACTION"
+const val IS_EDIT = "IS_EDIT"
+const val TYPE_MODEL = "TYPE_MODEL"
+const val DATE_BUDGET = "DATE_BUDGET"
+const val TRANSACTION_STATISTIC_MODEL = "TRANSACTION_STATISTIC_MODEL"
+const val CHART_DETAIL = "CHART_DETAIL"
+const val ID_BUDGET = "ID_BUDGET"
+const val BUDGET_DETAIL = "BUDGET_DETAIL"
+
+const val SYMBOL_CURRENCY = "SYMBOL_CURRENCY"
+const val SET_START_BUDGET = "SET_START_BUDGET"
+const val BUDGET = "BUDGET"
+const val CHOOSE_CURRENCY = "CHOOSE_CURRENCY"
+
+enum class TypeModel {
+    EXPENSES, INCOME, LOAN
+}
+
+enum class TypeLoan {
+    TYPE_LOAN, TYPE_BORROW, NULL
+}
+
+

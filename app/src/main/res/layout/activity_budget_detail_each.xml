@@ -127,7 +127,7 @@
             android:textSize="@dimen/_13ssp" />
     </RelativeLayout>
 
-    <com.nmh.base.project.customView.CustomPillProgressView
+    <com.nghp.project.moneyapp.customView.CustomPillProgressView
         android:id="@+id/pillProgressView"
         android:layout_width="@dimen/_80sdp"
         android:layout_height="@dimen/_70sdp"

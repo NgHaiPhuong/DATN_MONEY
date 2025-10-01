@@ -19,7 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.nmh.base.project.customView.CustomPillProgressView
+    <com.nghp.project.moneyapp.customView.CustomPillProgressView
         android:id="@+id/pillProgressView"
         android:layout_width="@dimen/_55sdp"
         android:layout_height="@dimen/_50sdp"
